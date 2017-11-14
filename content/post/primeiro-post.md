@@ -3,14 +3,14 @@ title: "Lab 1 - Parte 3"
 date: 2017-11-13T21:52:55-03:00
 ---
 
-<h2> Caminho do volume morto </h3>
+<h2> Caminho do volume morto </h2>
 <div id="vis" width=300></div>
 
-<h2>Quais os meses em que o açude mais sangrou </h3>
+<h2>Quais os meses em que o açude mais sangrou </h2>
 <div id="vis2" width=300></div>
 
-<h2>Comparando os anos com piores médias de volume percentual</h3>
-<h5>O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis.</h2>
+<h2>Comparando os anos com piores médias de volume percentual</h2>
+<h5>O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis.</h5>
 <div id="vis3" width=300></div>
 
 

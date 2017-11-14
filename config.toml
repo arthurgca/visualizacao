@@ -1,4 +1,4 @@
-baseurl = "/visualizacao/"
+baseurl = "https://arthurgca.github.io/visualizacao/"
 DefaultContentLanguage = "en"
 #DefaultContentLanguage = "ja"
 title = "Visualização da Informação - 2017.2"
