@@ -1,4 +1,4 @@
-baseurl = "https://arthurgca.github.io"
+baseurl = "https://arthurgca.github.io/visualizacao/"
 DefaultContentLanguage = "en"
 #DefaultContentLanguage = "ja"
 title = "Beautiful Hugo"
