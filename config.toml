@@ -4,6 +4,7 @@ DefaultContentLanguage = "en"
 title = "Beautiful Hugo"
 theme = "beautifulhugo"
 metaDataFormat = "yaml"
+publishDir = "docs"
 pygmentsUseClasses = true
 pygmentCodeFences = true
 #disqusShortname = "XXX"
