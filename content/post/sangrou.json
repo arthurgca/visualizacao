@@ -23,8 +23,8 @@
   ],
   "mark": "bar",
   "encoding": {
-    "x": { "timeUnit": "month", "field": "DataInformacao", "type": "ordinal"},
-    "y": {"field": "VolumePercentual", "type": "quantitative", "aggregate":"count"}
+    "y": { "timeUnit": "month", "field": "DataInformacao", "type": "ordinal"},
+    "x": {"field": "VolumePercentual", "type": "quantitative", "aggregate":"count"}
 
     } 
 
