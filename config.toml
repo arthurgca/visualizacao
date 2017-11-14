@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "/visualizacao/"
 DefaultContentLanguage = "en"
 #DefaultContentLanguage = "ja"
 title = "Beautiful Hugo"
