@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Beautiful Hugo</title>
+    <title>Posts on Visualização da Informação - 2017.2</title>
     <link>/visualizacao/post/</link>
-    <description>Recent content in Posts on Beautiful Hugo</description>
+    <description>Recent content in Posts on Visualização da Informação - 2017.2</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>youremail@domain.com (Some Person)</managingEditor>
-    <webMaster>youremail@domain.com (Some Person)</webMaster>
+    <managingEditor>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</managingEditor>
+    <webMaster>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</webMaster>
     <lastBuildDate>Mon, 13 Nov 2017 21:52:55 -0300</lastBuildDate>
     
 	<atom:link href="/visualizacao/post/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <title>Primeiro Post</title>
       <link>/visualizacao/post/primeiro-post/</link>
       <pubDate>Mon, 13 Nov 2017 21:52:55 -0300</pubDate>
-      <author>youremail@domain.com (Some Person)</author>
+      <author>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</author>
       <guid>/visualizacao/post/primeiro-post/</guid>
       <description>Caminho do volume morto  
 Quais os meses em que o açude mais sangrou  
