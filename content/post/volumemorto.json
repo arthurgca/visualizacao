@@ -23,7 +23,7 @@
   "mark": "area",
   "encoding": {
     "x": { "timeUnit": "yearmonth", "field": "DataInformacao", "type": "ordinal"},
-    "y": {"field": "VolumePercentual", "type": "quantitative"}
+    "y": {"field": "VolumePercentual", "type": "quantitative", "aggregate": "max"}
     } 
 
 }
