@@ -1,0 +1,27 @@
+ {
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "description": "A simple bar chart with embedded data.",
+  "data":{
+    "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
+    "format": {
+      "type": "json",
+      "property": "volumes",
+      "parse": {
+       "DataInformacao": "utc:'%d/%m/%Y'"
+       }
+      }
+    
+  },
+  "transform": [
+    {"filter": {
+      "timeUnit":"year", "field": "DataInformacao", "oneOf": [2016,2017, 1999]
+    }}
+  ],
+  "mark": "line",
+  "encoding": {
+    "x": { "timeUnit": "month", "field": "DataInformacao", "type": "ordinal", "axis": {"format": "%B"}},
+    "y": {"field": "VolumePercentual", "type": "quantitative","aggregate":"max"},
+    "color": {"timeUnit": "year", "field": "DataInformacao", "type": "nominal"}
+  }
+
+}

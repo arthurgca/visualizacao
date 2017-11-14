@@ -1,0 +1,31 @@
+ {
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "description": "A simple bar chart with embedded data.",
+  "title": "Contagem de meses com sangramento",
+  "data":{
+    "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
+    "format": {
+      "type": "json",
+      "property": "volumes",
+      "parse": {
+       "DataInformacao": "utc:'%d/%m/%Y'"
+       }
+      }
+    
+  },
+  "transform": [
+    {
+      "filter":{ 
+      "field": "VolumePercentual",
+      "range": [100, 150] 
+      }
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": { "timeUnit": "month", "field": "DataInformacao", "type": "ordinal"},
+    "y": {"field": "VolumePercentual", "type": "quantitative", "aggregate":"count"}
+
+    } 
+
+}
