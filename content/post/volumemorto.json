@@ -24,8 +24,8 @@
   ],
   "mark": "area",
   "encoding": {
-    "x": { "timeUnit": "yearmonth", "field": "DataInformacao", "type": "ordinal"},
-    "y": {"field": "VolumePercentual", "type": "quantitative", "aggregate": "max"}
+    "x": { "timeUnit": "yearmonth", "field": "DataInformacao", "type": "ordinal", "axis":{"title": "Mês"}},
+    "y": {"field": "VolumePercentual", "type": "quantitative", "aggregate": "max", "axis":{"title": "Máximo voume percentual"}}
     } 
 
 }

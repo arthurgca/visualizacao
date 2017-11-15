@@ -11,11 +11,13 @@
   <meta name="description" content="Caminho do volume morto  
 Quais os meses em que o açude mais sangrou  
 Comparando os anos com piores médias de volume percentual O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis. 
-    const spec = &#34;../volumemorto.json&#34;; const spec2 = &#34;../sangrou.json&#34;; const spec3 = &#34;../anosseca.json&#34;; vegaEmbed(&#39;#vis&#39;, spec).catch(console.warn); vegaEmbed(&#39;#vis2&#39;, spec2).catch(console.warn); vegaEmbed(&#39;#vis3&#39;, spec3).">
+Média de volume percentual por estação Comparando as médias dos meses por estação  Verão Outono Inverno Primavera 
+     const spec = &#34;">
   <meta property="og:description" content="Caminho do volume morto  
 Quais os meses em que o açude mais sangrou  
 Comparando os anos com piores médias de volume percentual O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis. 
-    const spec = &#34;../volumemorto.json&#34;; const spec2 = &#34;../sangrou.json&#34;; const spec3 = &#34;../anosseca.json&#34;; vegaEmbed(&#39;#vis&#39;, spec).catch(console.warn); vegaEmbed(&#39;#vis2&#39;, spec2).catch(console.warn); vegaEmbed(&#39;#vis3&#39;, spec3).">
+Média de volume percentual por estação Comparando as médias dos meses por estação  Verão Outono Inverno Primavera 
+     const spec = &#34;">
   <meta name="twitter:description" content="Caminho do volume morto  
 Quais os meses em que o açude mais sangrou  
 Comparando os anos com piores médias de volume percentual O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No …">
@@ -189,6 +191,17 @@ Comparando os anos com piores médias de volume percentual O ano com menor médi
 <h5>O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis.</h5>
 <div id="vis3" width=300></div></p>
 
+<p><h2>Média de volume percentual por estação</h2>
+<h5>Comparando as médias dos meses por estação</h5>
+<ul>
+    <li><font color="red">Verão</font></li>
+    <li><font color="goldenrod">Outono</font></li>
+    <li><font color="blue">Inverno</font></li>
+    <li><font color="green">Primavera</font></li>
+</ul></p>
+
+<div id="vis4" width=300></div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
@@ -196,11 +209,14 @@ Comparando os anos com piores médias de volume percentual O ano com menor médi
     const spec = "../volumemorto.json";
     const spec2 = "../sangrou.json";
     const spec3 = "../anosseca.json";
+    const spec4 = "../estacoes.json";
 
 
     vegaEmbed('#vis', spec).catch(console.warn);
     vegaEmbed('#vis2', spec2).catch(console.warn);
     vegaEmbed('#vis3', spec3).catch(console.warn);
+    vegaEmbed('#vis4', spec4).catch(console.warn);
+
 </script>
 
       </article>

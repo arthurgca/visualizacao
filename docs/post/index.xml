@@ -21,7 +21,8 @@
       <description>Caminho do volume morto  
 Quais os meses em que o açude mais sangrou  
 Comparando os anos com piores médias de volume percentual O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis. 
-    const spec = &#34;../volumemorto.json&#34;; const spec2 = &#34;../sangrou.json&#34;; const spec3 = &#34;../anosseca.json&#34;; vegaEmbed(&#39;#vis&#39;, spec).catch(console.warn); vegaEmbed(&#39;#vis2&#39;, spec2).catch(console.warn); vegaEmbed(&#39;#vis3&#39;, spec3).</description>
+Média de volume percentual por estação Comparando as médias dos meses por estação  Verão Outono Inverno Primavera 
+     const spec = &#34;</description>
     </item>
     
   </channel>

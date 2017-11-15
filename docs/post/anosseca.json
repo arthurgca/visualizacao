@@ -21,8 +21,8 @@
   ],
   "mark": "line",
   "encoding": {
-    "x": { "timeUnit": "month", "field": "DataInformacao", "type": "ordinal", "axis": {"format": "%B"}},
-    "y": {"field": "VolumePercentual", "type": "quantitative","aggregate":"max"},
+    "x": { "timeUnit": "month", "field": "DataInformacao", "type": "ordinal", "axis": {"format": "%B"}, "axis":{"title": "Meses"}},
+    "y": {"field": "VolumePercentual", "type": "quantitative","aggregate":"max", "axis":{"title": "Média"}},
     "color": {"timeUnit": "year", "field": "DataInformacao", "type": "nominal"}
   }
 

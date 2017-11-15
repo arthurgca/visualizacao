@@ -1,0 +1,84 @@
+ {
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "description": "A simple bar chart with embedded data.",
+  "data":{
+    "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
+    "format": {
+      "type": "json",
+      "property": "volumes",
+      "parse": {
+       "DataInformacao": "utc:'%d/%m/%Y'"
+       }
+      }
+    
+  }, "height": 300, "width": 800,
+  "layer": [
+    {
+      "transform": [ {"filter": {"timeUnit": "monthdate",
+      "field": "DataInformacao", "range": [
+        {"date":20,  "month":"mar"}, { "date":21, "month": "jun"}]
+    }}
+  ],
+  "mark": "point", 
+  "encoding": { "color": {"value": "goldenrod"},
+    "x": { "timeUnit": "monthdate", "field": "DataInformacao", "type": "ordinal"},
+    "y": {"field": "VolumePercentual", "type": "quantitative","aggregate":"mean"}
+  }
+    },
+    {
+      "transform": [ {"filter": {"timeUnit": "monthdate",
+      "field": "DataInformacao", "range": [
+        {"date":21,  "month":"jun"}, { "date":22, "month": "sep"}]
+    }}
+  ],
+  "mark": "point",
+  "encoding": { "color": {"value": "blue"},
+    "x": { "timeUnit": "monthdate", "field": "DataInformacao", "type": "ordinal"},
+    "y": {"field": "VolumePercentual", "type": "quantitative","aggregate":"mean"}
+  }
+    },
+        {
+      "transform": [ {"filter": {"timeUnit": "monthdate",
+      "field": "DataInformacao", "range": [
+        {"date":22,  "month":"sep"}, { "date":21, "month": "dec"}]
+    }}
+  ],
+  "mark": "point",
+  "encoding": { "color": {"value": "green"},
+    "x": { "timeUnit": "monthdate", "field": "DataInformacao", "type": "ordinal"},
+    "y": {"field": "VolumePercentual", "type": "quantitative","aggregate":"mean"}
+  }
+    }, 
+            {
+      "transform": [ {"filter": {"timeUnit": "monthdate",
+      "field": "DataInformacao", "range": [
+        {"date":22,  "month":"dec"}, { "date":31, "month": "dec"}]
+    }}
+  ],
+  "mark": "point",
+  "encoding": { "color": {"value": "red"},
+    "x": { "timeUnit": "monthdate", "field": "DataInformacao", "type": "ordinal", "axis":{
+        "format": "%d/%B"
+    }, "axis":{"title": "Dias"}},
+    "y": {"field": "VolumePercentual", "type": "quantitative","aggregate":"mean", "axis":{"title": "Média do volume percentual"}}
+  }
+    },
+
+            {
+      "transform": [ {"filter": {"timeUnit": "monthdate",
+      "field": "DataInformacao", "range": [
+        {"date":1,  "month":"jan"}, { "date":20, "month": "mar"}]
+    }}
+  ],
+  "mark": "point",
+  "encoding": { "color": {"value": "red"},
+    "x": { "timeUnit": "monthdate", "field": "DataInformacao", "type": "ordinal", "axis":{
+        "format": "%d/%B"
+    }},
+    "y": {"field": "VolumePercentual", "type": "quantitative","aggregate":"mean"}
+  }
+    }
+  ]
+
+
+}
