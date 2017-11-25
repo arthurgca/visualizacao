@@ -5,33 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Lab 1 - Parte 3</title>
-  <meta property="og:title" content="Lab 1 - Parte 3" />
-  <meta name="twitter:title" content="Lab 1 - Parte 3" />
-  <meta name="description" content="Caminho do volume morto  
-Quais os meses em que o açude mais sangrou  
-Comparando os anos com piores médias de volume percentual O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis. 
-Média de volume percentual por estação Comparando as médias dos meses por estação  Verão Outono Inverno Primavera 
-     const spec = &#34;">
-  <meta property="og:description" content="Caminho do volume morto  
-Quais os meses em que o açude mais sangrou  
-Comparando os anos com piores médias de volume percentual O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis. 
-Média de volume percentual por estação Comparando as médias dos meses por estação  Verão Outono Inverno Primavera 
-     const spec = &#34;">
-  <meta name="twitter:description" content="Caminho do volume morto  
-Quais os meses em que o açude mais sangrou  
-Comparando os anos com piores médias de volume percentual O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No …">
+  <title>Lab 2 - Parte 1</title>
+  <meta property="og:title" content="Lab 2 - Parte 1" />
+  <meta name="twitter:title" content="Lab 2 - Parte 1" />
+  <meta name="description" content="Mês de período chuvoso ou não.      .mychart rect { fill: steelblue; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }   &#34;use strict&#34; function desenhaBarras(dados) { var alturaSVG = 400, larguraSVG = 900; var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.left - margin.">
+  <meta property="og:description" content="Mês de período chuvoso ou não.      .mychart rect { fill: steelblue; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }   &#34;use strict&#34; function desenhaBarras(dados) { var alturaSVG = 400, larguraSVG = 900; var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.left - margin.">
+  <meta name="twitter:description" content="Mês de período chuvoso ou não.      .mychart rect { fill: steelblue; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }   &#34;use strict&#34; function …">
   <meta name="author" content="Arthur Gurjão"/>
   <link href='https://arthurgca.github.io/visualizacao/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://arthurgca.github.io/visualizacao/img/avatar-icon.png" />
   <meta name="twitter:image" content="https://arthurgca.github.io/visualizacao/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://arthurgca.github.io/visualizacao/post/primeiro-post/" />
+  <meta property="og:url" content="https://arthurgca.github.io/visualizacao/post/segundo-post/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Visualização da Informação - 2017.2" />
 
   <meta name="generator" content="Hugo 0.30.2" />
-  <link rel="canonical" href="https://arthurgca.github.io/visualizacao/post/primeiro-post/" />
+  <link rel="canonical" href="https://arthurgca.github.io/visualizacao/post/segundo-post/" />
   <link rel="alternate" href="" type="application/rss+xml" title="Visualização da Informação - 2017.2">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -158,11 +148,11 @@ Comparando os anos com piores médias de volume percentual O ano com menor médi
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>Lab 1 - Parte 3</h1>
+              <h1>Lab 2 - Parte 1</h1>
                 
                 
                   <span class="post-meta">
-  Posted on November 13, 2017
+  Posted on November 24, 2017
   
 </span>
 
@@ -181,52 +171,98 @@ Comparando os anos com piores médias de volume percentual O ano com menor médi
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p><h2> Caminho do volume morto </h2>
-<div id="vis" width=300></div></p>
+        <div class="container">
+<div class="row">
+  <h2>Mês de período chuvoso ou não. </h2>
+</div>
+<div class="row mychart" id="chart">
+</div>
+</div>
 
-<p><h2>Quais os meses em que o açude mais sangrou </h2>
-<div id="vis2" width=300></div></p>
+<style>
+.mychart rect {
+  fill: steelblue;
+}
 
-<p><h2>Comparando os anos com piores médias de volume percentual</h2>
-<h5>O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis.</h5>
-<div id="vis3" width=300></div></p>
+.mychart rect:hover {
+  fill: goldenrod;
+}
 
-<p><h2>Média de volume percentual por estação</h2>
-<h5>Comparando as médias dos meses por estação</h5>
-<ul>
-    <li><font color="red">Verão</font></li>
-    <li><font color="goldenrod">Outono</font></li>
-    <li><font color="blue">Inverno</font></li>
-    <li><font color="green">Primavera</font></li>
-</ul></p>
+.mychart text {
+  font: 12px sans-serif;
+  text-anchor: left;
+}
+</style>
 
-<div id="vis4" width=300></div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
-<script>
-    const spec = "../volumemorto.json";
-    const spec2 = "../sangrou.json";
-    const spec3 = "../anosseca.json";
-    const spec4 = "../estacoes.json";
+<script type="text/javascript">
+"use strict"
+
+function desenhaBarras(dados) {
+    var alturaSVG = 400, larguraSVG = 900;
+    var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
+      larguraVis = larguraSVG - margin.left - margin.right,
+      alturaVis = alturaSVG - margin.top - margin.bottom;
+
+    var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
+    .append('svg')
+      .attr('width', larguraVis + margin.left + margin.right)
+      .attr('height', alturaVis + margin.top + margin.bottom)
+    .append('g') // para entender o <g> vá em x03-detalhes-svg.html
+      .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
+
+      var x = d3.scaleBand()
+                .domain(dados.map(function(d, i) { return d.noventa_percentil;}))
+                .rangeRound([0, larguraVis])
+                .padding(0.05); // Configure essa escala com domain, range e padding
+      var y = d3.scaleLinear()
+                .domain([d3.min(dados, (d, i) => d.dez_percentil), d3.max(dados, (d, i) => d.dez_percentil)])
+                .rangeRound([alturaVis, 0]); // Configure essa escala com domain e range
+                               // Lembre que uma escala pode converter de 1..10 -> 100..1
+
+    grafico.selectAll('g')
+          .data(dados)
+          .enter()
+            .append('circle')
+            .attr("r",  10)
+            .attr('cx', d => x(d.noventa_percentil))
+            .attr('cy', d => y(d.dez_percentil))
+            .style("fill", function(d) {
+            if(d.mediana > 80) {
+                return "blue";
+            } else {
+                return "lightblue"
+            }
+            });
+
+    grafico.selectAll('text')
+        .data(dados)
+        .enter()
+        .append("text")
+        .attr("x", d => x(d.noventa_percentil)- 20)
+        .attr("y", d => y(d.dez_percentil) + 30)
+        .text(d => "Mês: " + d.mes);
 
 
-    vegaEmbed('#vis', spec).catch(console.warn);
-    vegaEmbed('#vis2', spec2).catch(console.warn);
-    vegaEmbed('#vis3', spec3).catch(console.warn);
-    vegaEmbed('#vis4', spec4).catch(console.warn);
+}
 
-</script>
+d3.csv('../dados_boqueirao.csv', function(dados) {
+    desenhaBarras(dados);
+});
+
+
+</script>   
 
       </article>
 
       <ul class="pager blog-pager">
         
-        
-          <li class="next">
-            <a href="https://arthurgca.github.io/visualizacao/post/segundo-post/" data-toggle="tooltip" data-placement="top" title="Lab 2 - Parte 1">Next Post &rarr;</a>
+          <li class="previous">
+            <a href="https://arthurgca.github.io/visualizacao/post/primeiro-post/" data-toggle="tooltip" data-placement="top" title="Lab 1 - Parte 3">&larr; Previous Post</a>
           </li>
+        
         
       </ul>
 

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</managingEditor>
     <webMaster>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</webMaster>
-    <lastBuildDate>Mon, 13 Nov 2017 21:52:55 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 24 Nov 2017 22:36:59 -0300</lastBuildDate>
     
 	<atom:link href="https://arthurgca.github.io/visualizacao/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lab 2 - Parte 1</title>
+      <link>https://arthurgca.github.io/visualizacao/post/segundo-post/</link>
+      <pubDate>Fri, 24 Nov 2017 22:36:59 -0300</pubDate>
+      <author>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</author>
+      <guid>https://arthurgca.github.io/visualizacao/post/segundo-post/</guid>
+      <description>Mês de período chuvoso ou não.      .mychart rect { fill: steelblue; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }   &#34;use strict&#34; function desenhaBarras(dados) { var alturaSVG = 400, larguraSVG = 900; var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.left - margin.</description>
+    </item>
     
     <item>
       <title>Lab 1 - Parte 3</title>
