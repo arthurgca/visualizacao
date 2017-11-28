@@ -33,6 +33,8 @@ date: 2017-11-24T22:36:59-03:00
 "use strict"
 
 function desenhaBarras(dados) {
+	const mes_string= ["Janeiro", "Fevereiro","Março","Abril","Maio", "Junho", "Julho", "Agosto","Setembro","Outubro","Novembro","Dezembro"]
+
 	var alturaSVG = 400, larguraSVG = 900;
 	var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
 	  larguraVis = larguraSVG - margin.left - margin.right,
@@ -49,6 +51,7 @@ function desenhaBarras(dados) {
 	            .domain(dados.map(function(d, i) { return d.noventa_percentil;}))
 	            .rangeRound([0, larguraVis])
 	            .padding(0.05); // Configure essa escala com domain, range e padding
+	            
 	  var y = d3.scaleLinear()
 	            .domain([d3.min(dados, (d, i) => d.dez_percentil), d3.max(dados, (d, i) => d.dez_percentil)])
 	            .rangeRound([alturaVis, 0]); // Configure essa escala com domain e range
@@ -73,9 +76,9 @@ function desenhaBarras(dados) {
 		.data(dados)
 		.enter()
 		.append("text")
-		.attr("x", d => x(d.noventa_percentil)- 20)
+		.attr("x", d => x(d.noventa_percentil))
 		.attr("y", d => y(d.dez_percentil) + 30)
-		.text(d => "Mês: " + d.mes);
+		.text(d => mes_string[parseInt(d.mes) - 1]);
 
 
 }
