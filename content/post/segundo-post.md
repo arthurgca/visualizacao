@@ -72,21 +72,29 @@ function desenha(dados) {
   			});
 
 	grafico.selectAll('text')
-		.data(dados)
-		.enter()
-		.append("text")
-		.attr("x", d => x(d.noventa_percentil))
-		.attr("y", d => y(d.dez_percentil) + 20)
-		.text(d => mes_string[parseInt(d.mes) - 1]);
+			.data(dados)
+			.enter()
+			.append("text")
+			.attr("x", d => x(d.noventa_percentil))
+			.attr("y", d => y(d.dez_percentil) + 20)
+			.text(d => mes_string[parseInt(d.mes) - 1]);
 
-	  grafico.append("g")
-		      .attr("class", "x axis")
-		      .attr("transform", "translate(0," + alturaVis + ")")
-		      .call(d3.axisBottom(x));
+	grafico.append("g")
+			.attr("class", "x axis")
+			.attr("transform", "translate(0," + alturaVis + ")")
+			.call(d3.axisBottom(x));
 
-	  grafico.append('g')
-	          .attr('transform', 'translate(0,0)')
-	          .call(d3.axisLeft(y))
+	grafico.append('g')
+			.attr('transform', 'translate(0,0)')
+			.call(d3.axisLeft(y))
+
+	grafico.append("text")
+			.attr("transform", "translate("+larguraVis/2+","+ (alturaVis + margin.bottom) +")")
+			.text("90 percentil");
+
+	grafico.append("text")
+			.attr("transform", "translate(-35," + (alturaVis + margin.top)/2 + ") rotate(-90)")
+			.text("10 percentil");
 
 
 
