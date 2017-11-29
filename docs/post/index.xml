@@ -18,7 +18,7 @@
       <pubDate>Fri, 24 Nov 2017 22:36:59 -0300</pubDate>
       <author>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</author>
       <guid>https://arthurgca.github.io/visualizacao/post/segundo-post/</guid>
-      <description>Mês de período chuvoso ou não.      .mychart rect { fill: steelblue; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }   &#34;use strict&#34; function desenhaBarras(dados) { const mes_string= [&#34;Janeiro&#34;, &#34;Fevereiro&#34;,&#34;Março&#34;,&#34;Abril&#34;,&#34;Maio&#34;, &#34;Junho&#34;, &#34;Julho&#34;, &#34;Agosto&#34;,&#34;Setembro&#34;,&#34;Outubro&#34;,&#34;Novembro&#34;,&#34;Dezembro&#34;] var alturaSVG = 400, larguraSVG = 900; var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</description>
+      <description>Mês de período chuvoso ou não.      .mychart rect { fill: steelblue; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }   &#34;use strict&#34; function desenha(dados) { const mes_string= [&#34;Janeiro&#34;, &#34;Fevereiro&#34;,&#34;Março&#34;,&#34;Abril&#34;,&#34;Maio&#34;, &#34;Junho&#34;, &#34;Julho&#34;, &#34;Agosto&#34;,&#34;Setembro&#34;,&#34;Outubro&#34;,&#34;Novembro&#34;,&#34;Dezembro&#34;] var alturaSVG = 400, larguraSVG = 900; var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</description>
     </item>
     
     <item>

@@ -32,7 +32,7 @@ date: 2017-11-24T22:36:59-03:00
 <script type="text/javascript">
 "use strict"
 
-function desenhaBarras(dados) {
+function desenha(dados) {
 	const mes_string= ["Janeiro", "Fevereiro","Março","Abril","Maio", "Junho", "Julho", "Agosto","Setembro","Outubro","Novembro","Dezembro"]
 
 	var alturaSVG = 400, larguraSVG = 900;
@@ -47,15 +47,14 @@ function desenhaBarras(dados) {
 	.append('g') // para entender o <g> vá em x03-detalhes-svg.html
 	  .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
 
-	  var x = d3.scaleBand()
-	            .domain(dados.map(function(d, i) { return d.noventa_percentil;}))
+	  var x = d3.scaleLinear()
+            	.domain([d3.min(dados, (d) => d.noventa_percentil) - 1, d3.max(dados, (d) => d.noventa_percentil) + 1])
 	            .rangeRound([0, larguraVis])
-	            .padding(0.05); // Configure essa escala com domain, range e padding
 	            
 	  var y = d3.scaleLinear()
-	            .domain([d3.min(dados, (d, i) => d.dez_percentil), d3.max(dados, (d, i) => d.dez_percentil)])
-	            .rangeRound([alturaVis, 0]); // Configure essa escala com domain e range
-	                           // Lembre que uma escala pode converter de 1..10 -> 100..1
+            .domain([d3.min(dados, (d) => d.dez_percentil) - 1, d3.max(dados, (d) => d.dez_percentil) + 1])
+            .rangeRound([alturaVis, 0]);
+
 
 	grafico.selectAll('g')
 	      .data(dados)
@@ -77,14 +76,25 @@ function desenhaBarras(dados) {
 		.enter()
 		.append("text")
 		.attr("x", d => x(d.noventa_percentil))
-		.attr("y", d => y(d.dez_percentil) + 30)
+		.attr("y", d => y(d.dez_percentil) + 20)
 		.text(d => mes_string[parseInt(d.mes) - 1]);
+
+	  grafico.append("g")
+		      .attr("class", "x axis")
+		      .attr("transform", "translate(0," + alturaVis + ")")
+		      .call(d3.axisBottom(x));
+
+	  grafico.append('g')
+	          .attr('transform', 'translate(0,0)')
+	          .call(d3.axisLeft(y))
+
+
 
 
 }
 
-d3.csv('../dados_boqueirao.csv', function(dados) {
-	desenhaBarras(dados);
+d3.json('../boqueiraomes.json', function(dados) {
+  desenha(dados);
 });
 
 
