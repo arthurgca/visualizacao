@@ -5,7 +5,7 @@ date: 2017-12-09T17:47:11-03:00
 
 <div class="container">
 <div class="row">
-  <h2>Mês de período chuvoso ou não. </h2>
+  <h2>Horários de quantidades de pessoas pedalando no açude velho.</h2>
 </div>
 <div class="row mychart" id="chart"></div>
 </div>
