@@ -38,15 +38,15 @@ function desenhaGrafico1(dados) {
 	
 	var	parseDate = d3.timeParse("%H:%M");
 
-	var x = d3.scaleTime().range([0, larguraVis]).domain(d3.extent(dados, function(d) { return parseDate(d.horario_inicial); })).interpolate(d3.interpolateRound);
+	var x = d3.scaleTime().range([0, larguraVis]).domain(d3.extent(dados, function(d) { return parseDate(d.horario_final); })).interpolate(d3.interpolateRound);
 
 	var totalciclistas = {};
 
 	dados.forEach(function (d) {
-		if (typeof(totalciclistas[d.horario_inicial]) == "undefined") {
-			totalciclistas[d.horario_inicial] = parseInt(d.total_ciclistas);
+		if (typeof(totalciclistas[d.horario_final]) == "undefined") {
+			totalciclistas[d.horario_final] = parseInt(d.total_ciclistas);
 		} else {
-			totalciclistas[d.horario_inicial] += parseInt(d.total_ciclistas);
+			totalciclistas[d.horario_final] += parseInt(d.total_ciclistas);
 		}
 	})
 
@@ -54,10 +54,10 @@ function desenhaGrafico1(dados) {
 			.data(dados)
 			.enter()
 			.append('circle')
-			.attr("r", 	d => totalciclistas[d.horario_inicial] * 0.10 )
+			.attr("r", 	d => totalciclistas[d.horario_final] * 0.10 )
 			.attr('cy', alturaSVG/2)
-      		.attr("cx", d => x(parseDate(d.horario_inicial)))
-      		.attr("fill", d => color(totalciclistas[d.horario_inicial])); 
+      		.attr("cx", d => x(parseDate(d.horario_final)))
+      		.attr("fill", d => color(totalciclistas[d.horario_final])); 
 
 
 	grafico.append("g")
@@ -87,31 +87,31 @@ function desenhaGrafico2(dados) {
 	var totalciclistas = {};
 
 	dados.forEach(function (d) {
-		if (typeof(totalciclistas[d.horario_inicial]) == "undefined") {
-			totalciclistas[d.horario_inicial] = {
+		if (typeof(totalciclistas[d.horario_final]) == "undefined") {
+			totalciclistas[d.horario_final] = {
 												"mulheres": parseInt(d.mulheres_ciclistas), 
 												"homens": parseInt(d.homens_ciclistas)
 												}
 		} else {
-			totalciclistas[d.horario_inicial].mulheres += parseInt(d.mulheres_ciclistas);
-			totalciclistas[d.horario_inicial].homens += parseInt(d.homens_ciclistas);
+			totalciclistas[d.horario_final].mulheres += parseInt(d.mulheres_ciclistas);
+			totalciclistas[d.horario_final].homens += parseInt(d.homens_ciclistas);
 		}
 	})
 
 
 	var valueline = d3.line()
-		.x(function(d) { return x(parseTime(d.horario_inicial)); })
-		.y(function(d) { return y(totalciclistas[d.horario_inicial].mulheres);});
+		.x(function(d) { return x(parseTime(d.horario_final)); })
+		.y(function(d) { return y(totalciclistas[d.horario_final].mulheres);});
 
 	// define the 2nd line
 	var valueline2 = d3.line()
-		.x(function(d) { return x(parseTime(d.horario_inicial)); })
-		.y(function(d) { return y(totalciclistas[d.horario_inicial].homens);});
+		.x(function(d) { return x(parseTime(d.horario_final)); })
+		.y(function(d) { return y(totalciclistas[d.horario_final].homens);});
 
 
-	x.domain(d3.extent(dados, function(d) { return parseTime(d.horario_inicial); }));
+	x.domain(d3.extent(dados, function(d) { return parseTime(d.horario_final); }));
 	y.domain([0, d3.max(dados, function(d) {
-	return Math.max(totalciclistas[d.horario_inicial].mulheres, totalciclistas[d.horario_inicial].homens); })]);
+	return Math.max(totalciclistas[d.horario_final].mulheres, totalciclistas[d.horario_final].homens); })]);
 
 
 	grafico.append("path")
@@ -137,14 +137,14 @@ function desenhaGrafico2(dados) {
 
 
 	grafico.append("text")
-		.attr("transform", "translate(" + (larguraVis-100) + "," + y(totalciclistas["20:45"].homens) + ")")
+		.attr("transform", "translate(" + (larguraVis-100) + "," + y(totalciclistas["21:00"].homens) + ")")
 		.attr("dy", ".35em")
 		.attr("text-anchor", "start")
 		.style("fill", "#d8b365")
 		.text("Homens");
 
 	grafico.append("text")
-		.attr("transform", "translate(" + (larguraVis-100) + "," + y(totalciclistas["20:45"].mulheres) + ")")
+		.attr("transform", "translate(" + (larguraVis-100) + "," + y(totalciclistas["21:00"].mulheres) + ")")
 		.attr("dy", ".35em")
 		.attr("text-anchor", "start")
 		.style("fill", "#5ab4ac")
