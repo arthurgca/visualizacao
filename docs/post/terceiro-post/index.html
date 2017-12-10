@@ -283,14 +283,14 @@ function desenhaGrafico2(dados) {
     .data([dados])
     .attr("class", "line")
     .attr("fill", "none")
-    .style("stroke", "red")
+    .style("stroke", "#5ab4ac")
     .attr("d", valueline);
 
     grafico.append("path")
     .data([dados])
     .attr("fill", "none")
     .attr("class", "line")
-    .style("stroke", "blue")
+    .style("stroke", "#d8b365")
     .attr("d", valueline2);
 
     grafico.append("g")
@@ -305,22 +305,19 @@ function desenhaGrafico2(dados) {
         .attr("transform", "translate(" + (larguraVis-100) + "," + y(totalciclistas["20:45"].homens) + ")")
         .attr("dy", ".35em")
         .attr("text-anchor", "start")
-        .style("fill", "steelblue")
+        .style("fill", "#d8b365")
         .text("Homens");
 
     grafico.append("text")
         .attr("transform", "translate(" + (larguraVis-100) + "," + y(totalciclistas["20:45"].mulheres) + ")")
         .attr("dy", ".35em")
         .attr("text-anchor", "start")
-        .style("fill", "red")
+        .style("fill", "#5ab4ac")
         .text("Mulheres");
 }
 
 d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
   desenhaGrafico1(dados);
-});
-
-d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
   desenhaGrafico2(dados);
 });
 
