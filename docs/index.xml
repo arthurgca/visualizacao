@@ -18,7 +18,7 @@
       <pubDate>Sat, 09 Dec 2017 17:47:11 -0300</pubDate>
       <author>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</author>
       <guid>https://arthurgca.github.io/visualizacao/post/terceiro-post/</guid>
-      <description>Horários de quantidades de pessoas pedalando no açude velho.      function desenha(dados) { var color = d3.scaleQuantize() .domain([0, 280]) .range([ &#34;#99d8c9&#34;,&#34;#66c2a4&#34;,&#34;#2ca25f&#34;,&#34;#006d2c&#34;]); var alturaSVG = 200, larguraSVG = 1200; var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.left - margin.right, alturaVis = alturaSVG - margin.top - margin.bottom; var grafico = d3.select(&#39;#chart&#39;) // cria elemento  com um  dentro .</description>
+      <description>Horários de quantidades de pessoas pedalando no açude velho.  Relação entre homens e mulheres pedalando ao redor do açude velho.     function desenhaGrafico1(dados) { var color = d3.scaleQuantize() .domain([0, 280]) .range([ &#34;#99d8c9&#34;,&#34;#66c2a4&#34;,&#34;#2ca25f&#34;,&#34;#006d2c&#34;]); var alturaSVG = 200, larguraSVG = 1200; var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.left - margin.right, alturaVis = alturaSVG - margin.</description>
     </item>
     
     <item>
