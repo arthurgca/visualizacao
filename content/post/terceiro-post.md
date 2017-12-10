@@ -6,10 +6,10 @@ date: 2017-12-09T17:47:11-03:00
 <div class="container">
 <div class="row">
 </div>
-<h2>Horários de quantidades de pessoas pedalando no açude velho.</h2>
+<h2>Horários e quantidades de pessoas pedalando no açude velho.</h2>
 <div class="row mychart1" id="chart1"></div>
 <h2>Relação entre homens e mulheres pedalando ao redor do açude velho.</h2>
-<h3>Percebemos que não há muita diferença entre a quantidade de homens e mulheres nos horários considerados "perigosos".</h3>
+<h3>Percebemos que a relação da quantidade de homens e mulheres pedalando em horários "perigosos" continua a mesma nos outros horários, não há diferença perceptível.</h3>
 <div class="row mychart2" id="chart2"></div>
 <h2>Os locais de coleta e os seus meios de transportes mais usados.</h2>
 <div class="row mychart2" id="chart3"></div>
