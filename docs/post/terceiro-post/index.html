@@ -343,7 +343,7 @@ var y = d3.scaleLinear()
     .rangeRound([alturaVis, 0]);
 
 var z = d3.scaleOrdinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+    .range(["#d73027","#fc8d59","#fee08b","#d9ef8b","#91cf60","#1a9850"]);
 
 dados = []
 data.forEach(function (d) {
@@ -393,7 +393,7 @@ data.forEach(function (d) {
       .attr("fill", "#000")
       .attr("font-weight", "bold")
       .attr("text-anchor", "start")
-      .text("Population");
+      .text("Quantidade");
 
   var legend = grafico.append("g")
       .attr("font-family", "sans-serif")
