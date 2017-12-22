@@ -18,7 +18,7 @@
       <pubDate>Fri, 22 Dec 2017 14:32:22 -0300</pubDate>
       <author>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</author>
       <guid>https://arthurgca.github.io/visualizacao/post/quarto-post/</guid>
-      <description>div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }   Os locais de coleta e os seus meios de transportes mais usados.     function desenhaGrafico3(dados) { var alturaSVG = 400, larguraSVG = 1200; var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</description>
+      <description>div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }  Tudo Noite Dia Manhã   Os locais de coleta e os seus meios de transportes mais usados.     var parseTime = d3.timeParse(&#34;%H:%M&#34;); function atualiza(sel) { d3.select(&#34;svg&#34;).remove(); d3.csv(&#39;https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv&#39;, function(dados) { if (sel.value == &#34;noite&#34;) { dados = dados.filter(function(d) { horario = parseInt(d[&#34;horario_final&#34;].slice(0,2)); if (horario  16) { return d; } }) } if (sel.</description>
     </item>
     
     <item>

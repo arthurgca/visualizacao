@@ -185,7 +185,7 @@
 
               <div class="post-entry">
                 
-                  div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }   Os locais de coleta e os seus meios de transportes mais usados.     function desenhaGrafico3(dados) { var alturaSVG = 400, larguraSVG = 1200; var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.
+                  div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }  Tudo Noite Dia Manhã   Os locais de coleta e os seus meios de transportes mais usados.     var parseTime = d3.timeParse("%H:%M"); function atualiza(sel) { d3.select("svg").remove(); d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) { if (sel.value == "noite") { dados = dados.filter(function(d) { horario = parseInt(d["horario_final"].slice(0,2)); if (horario  16) { return d; } }) } if (sel.
                   <a href="https://arthurgca.github.io/visualizacao/post/quarto-post/" class="post-read-more">[Read More]</a>
                 
               </div>

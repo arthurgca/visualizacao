@@ -19,6 +19,12 @@ draft: true
 </style>
 
 <div class="container">
+<select id="turno" onchange="atualiza(this)">
+    <option value="tudo">Tudo</option>
+    <option value="noite">Noite</option>
+    <option value="dia">Dia</option>
+    <option value="manha">Manhã</option>
+</select>    
 <div class="row">
 </div>
 <h2>Os locais de coleta e os seus meios de transportes mais usados.</h2>
@@ -29,8 +35,43 @@ draft: true
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script>
 
-function desenhaGrafico3(dados) {
+var parseTime = d3.timeParse("%H:%M");
 
+
+function atualiza(sel) {
+    d3.select("svg").remove(); 
+
+    d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
+      if (sel.value == "noite") {
+        dados = dados.filter(function(d) { 
+            horario = parseInt(d["horario_final"].slice(0,2));
+            if (horario > 16) {
+                return d;
+            }  
+        })
+      }
+      if (sel.value == "manha") {
+        dados = dados.filter(function(d) { 
+            horario = parseInt(d["horario_final"].slice(0,2));
+            if (horario < 12) {
+                return d;
+            }  
+        })
+      }
+      if (sel.value == "manha") {
+        dados = dados.filter(function(d) { 
+            horario = parseInt(d["horario_final"].slice(0,2));
+            if (horario < 12 && horario <= 16) {
+                return d;
+            }  
+        })
+      }
+      desenhaGrafico3(dados) 
+
+    });
+}
+
+function desenhaGrafico3(dados) {
     var alturaSVG = 400, larguraSVG = 1200;
     var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
         larguraVis = larguraSVG - margin.left - margin.right,
@@ -43,7 +84,6 @@ function desenhaGrafico3(dados) {
     .append('g') // para entender o <g> vá em x03-detalhes-svg.html
       .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
 
-    var parseTime = d3.timeParse("%H:%M");
     var x = d3.scaleTime().range([0, larguraVis]);
     var y = d3.scaleLinear().range([alturaVis, 0]);
 
@@ -78,6 +118,7 @@ function desenhaGrafico3(dados) {
     x.domain(d3.extent(dados, function(d) { return parseTime(d.horario_final); }));
     y.domain([0, d3.max(dados, function(d) {
     return Math.max(totalciclistas[d.horario_final].mulheres, totalciclistas[d.horario_final].homens); })]);
+
 
 
     grafico.select("body").append("div")   
