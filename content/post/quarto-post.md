@@ -61,10 +61,10 @@ function atualiza(sel) {
             }  
         })
       }
-      if (sel.value == "manha") {
+      if (sel.value == "dia") {
         dados = dados.filter(function(d) { 
             horario = parseInt(d["horario_final"].slice(0,2));
-            if (horario < 12 && horario <= 16) {
+            if (horario > 12 && horario <= 16) {
                 return d;
             }  
         })
@@ -194,14 +194,14 @@ function desenhaGrafico3(dados) {
 
 
     grafico.append("text")
-        .attr("transform", "translate(" + (larguraVis-100) + "," + (1) + ")")
+        .attr("transform", "translate(" + (larguraVis/2) + "," + (1) + ")")
         .attr("dy", ".35em")
         .attr("text-anchor", "start")
         .style("fill", "#d8b365")
         .text("Homens");
 
     grafico.append("text")
-        .attr("transform", "translate(" + (larguraVis-100) + "," + (20) + ")")
+        .attr("transform", "translate(" + (larguraVis/2) + "," + (20) + ")")
         .attr("dy", ".35em")
         .attr("text-anchor", "start")
         .style("fill", "#5ab4ac")
