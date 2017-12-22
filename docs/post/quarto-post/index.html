@@ -5,12 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Quarto Post</title>
-  <meta property="og:title" content="Quarto Post" />
-  <meta name="twitter:title" content="Quarto Post" />
-  <meta name="description" content="div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }  Tudo Noite Dia Manhã   Os locais de coleta e os seus meios de transportes mais usados.     var parseTime = d3.timeParse(&#34;%H:%M&#34;); function atualiza(sel) { d3.select(&#34;svg&#34;).remove(); d3.csv(&#39;https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv&#39;, function(dados) { if (sel.value == &#34;noite&#34;) { dados = dados.filter(function(d) { horario = parseInt(d[&#34;horario_final&#34;].slice(0,2)); if (horario  16) { return d; } }) } if (sel.">
-  <meta property="og:description" content="div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }  Tudo Noite Dia Manhã   Os locais de coleta e os seus meios de transportes mais usados.     var parseTime = d3.timeParse(&#34;%H:%M&#34;); function atualiza(sel) { d3.select(&#34;svg&#34;).remove(); d3.csv(&#39;https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv&#39;, function(dados) { if (sel.value == &#34;noite&#34;) { dados = dados.filter(function(d) { horario = parseInt(d[&#34;horario_final&#34;].slice(0,2)); if (horario  16) { return d; } }) } if (sel.">
-  <meta name="twitter:description" content="div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }  Tudo …">
+  <title>Laboratório 5 - Interação</title>
+  <meta property="og:title" content="Laboratório 5 - Interação" />
+  <meta name="twitter:title" content="Laboratório 5 - Interação" />
+  <meta name="description" content="div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }   Os locais de coleta e os seus meios de transportes mais usados. Com filtragem por horários Passe o mouse em cima do círculo para ver a quantidade de ciclistas por sexo naquele horário Tudo Noite (acima de 16:00) Dia (entre 12:00 e 16:00) Manhã (abaixo de 12:00)      var parseTime = d3.">
+  <meta property="og:description" content="div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }   Os locais de coleta e os seus meios de transportes mais usados. Com filtragem por horários Passe o mouse em cima do círculo para ver a quantidade de ciclistas por sexo naquele horário Tudo Noite (acima de 16:00) Dia (entre 12:00 e 16:00) Manhã (abaixo de 12:00)      var parseTime = d3.">
+  <meta name="twitter:description" content="div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }   Os …">
   <meta name="author" content="Arthur Gurjão"/>
   <link href='https://arthurgca.github.io/visualizacao/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://arthurgca.github.io/visualizacao/img/avatar-icon.png" />
@@ -148,7 +148,7 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>Quarto Post</h1>
+              <h1>Laboratório 5 - Interação</h1>
                 
                 
                   <span class="post-meta">
@@ -186,16 +186,19 @@
 }
 </style>
 
-<div class="container">
-<select id="turno" onchange="atualiza(this)">
-    <option value="tudo">Tudo</option>
-    <option value="noite">Noite</option>
-    <option value="dia">Dia</option>
-    <option value="manha">Manhã</option>
-</select>    
+<div class="container"> 
 <div class="row">
 </div>
 <h2>Os locais de coleta e os seus meios de transportes mais usados.</h2>
+<h3>Com filtragem por horários</h3>
+<h3>Passe o mouse em cima do círculo para ver a quantidade de ciclistas por sexo naquele horário</h3>
+
+<select id="turno" onchange="atualiza(this)">
+    <option value="tudo">Tudo</option>
+    <option value="noite">Noite (acima de 16:00)</option>
+    <option value="dia">Dia (entre 12:00 e 16:00)</option>
+    <option value="manha">Manhã (abaixo de 12:00)</option>
+</select>   
 <div class="row mychart2" id="chart2"></div>
 </div>
 
@@ -318,7 +321,7 @@ function desenhaGrafico3(dados) {
     grafico.selectAll("dot")    
         .data(dados)         
     .enter().append("circle")                               
-        .attr("r", 3)       
+        .attr("r", 4.5)       
         .attr("fill", "#5ab4ac")
         .attr("cx", function(d) { return x(parseTime(d.horario_final)); })       
         .attr("cy", function(d) { return y(totalciclistas[d.horario_final].mulheres); })     
@@ -339,7 +342,7 @@ function desenhaGrafico3(dados) {
     grafico.selectAll("dot")    
         .data(dados)         
     .enter().append("circle")                               
-        .attr("r", 3)       
+        .attr("r", 4.5)       
         .attr("fill", "#d8b365")
         .attr("cx", function(d) { return x(parseTime(d.horario_final)); })       
         .attr("cy", function(d) { return y(totalciclistas[d.horario_final].homens); })     
@@ -359,14 +362,14 @@ function desenhaGrafico3(dados) {
 
 
     grafico.append("text")
-        .attr("transform", "translate(" + (larguraVis-100) + "," + y(totalciclistas["21:00"].homens) + ")")
+        .attr("transform", "translate(" + (larguraVis-100) + "," + (1) + ")")
         .attr("dy", ".35em")
         .attr("text-anchor", "start")
         .style("fill", "#d8b365")
         .text("Homens");
 
     grafico.append("text")
-        .attr("transform", "translate(" + (larguraVis-100) + "," + y(totalciclistas["21:00"].mulheres) + ")")
+        .attr("transform", "translate(" + (larguraVis-100) + "," + (20) + ")")
         .attr("dy", ".35em")
         .attr("text-anchor", "start")
         .style("fill", "#5ab4ac")

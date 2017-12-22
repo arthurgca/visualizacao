@@ -172,7 +172,7 @@
           
             <article class="post-preview">
               <a href="https://arthurgca.github.io/visualizacao/post/quarto-post/">
-                <h2 class="post-title">Quarto Post</h2>
+                <h2 class="post-title">Laboratório 5 - Interação</h2>
                 
                 
               </a>
@@ -185,7 +185,7 @@
 
               <div class="post-entry">
                 
-                  div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }  Tudo Noite Dia Manhã   Os locais de coleta e os seus meios de transportes mais usados.     var parseTime = d3.timeParse("%H:%M"); function atualiza(sel) { d3.select("svg").remove(); d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) { if (sel.value == "noite") { dados = dados.filter(function(d) { horario = parseInt(d["horario_final"].slice(0,2)); if (horario  16) { return d; } }) } if (sel.
+                  div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }   Os locais de coleta e os seus meios de transportes mais usados. Com filtragem por horários Passe o mouse em cima do círculo para ver a quantidade de ciclistas por sexo naquele horário Tudo Noite (acima de 16:00) Dia (entre 12:00 e 16:00) Manhã (abaixo de 12:00)      var parseTime = d3.
                   <a href="https://arthurgca.github.io/visualizacao/post/quarto-post/" class="post-read-more">[Read More]</a>
                 
               </div>

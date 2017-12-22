@@ -1,5 +1,5 @@
 ---
-title: "Quarto Post"
+title: "Laboratório 5 - Interação"
 date: 2017-12-22T14:32:22-03:00
 draft: true
 ---
@@ -18,16 +18,19 @@ draft: true
 }
 </style>
 
-<div class="container">
-<select id="turno" onchange="atualiza(this)">
-    <option value="tudo">Tudo</option>
-    <option value="noite">Noite</option>
-    <option value="dia">Dia</option>
-    <option value="manha">Manhã</option>
-</select>    
+<div class="container"> 
 <div class="row">
 </div>
 <h2>Os locais de coleta e os seus meios de transportes mais usados.</h2>
+<h3>Com filtragem por horários</h3>
+<h3>Passe o mouse em cima do círculo para ver a quantidade de ciclistas por sexo naquele horário</h3>
+
+<select id="turno" onchange="atualiza(this)">
+    <option value="tudo">Tudo</option>
+    <option value="noite">Noite (acima de 16:00)</option>
+    <option value="dia">Dia (entre 12:00 e 16:00)</option>
+    <option value="manha">Manhã (abaixo de 12:00)</option>
+</select>   
 <div class="row mychart2" id="chart2"></div>
 </div>
 
@@ -150,7 +153,7 @@ function desenhaGrafico3(dados) {
     grafico.selectAll("dot")    
         .data(dados)         
     .enter().append("circle")                               
-        .attr("r", 3)       
+        .attr("r", 4.5)       
         .attr("fill", "#5ab4ac")
         .attr("cx", function(d) { return x(parseTime(d.horario_final)); })       
         .attr("cy", function(d) { return y(totalciclistas[d.horario_final].mulheres); })     
@@ -171,7 +174,7 @@ function desenhaGrafico3(dados) {
     grafico.selectAll("dot")    
         .data(dados)         
     .enter().append("circle")                               
-        .attr("r", 3)       
+        .attr("r", 4.5)       
         .attr("fill", "#d8b365")
         .attr("cx", function(d) { return x(parseTime(d.horario_final)); })       
         .attr("cy", function(d) { return y(totalciclistas[d.horario_final].homens); })     
@@ -191,14 +194,14 @@ function desenhaGrafico3(dados) {
 
 
     grafico.append("text")
-        .attr("transform", "translate(" + (larguraVis-100) + "," + y(totalciclistas["21:00"].homens) + ")")
+        .attr("transform", "translate(" + (larguraVis-100) + "," + (1) + ")")
         .attr("dy", ".35em")
         .attr("text-anchor", "start")
         .style("fill", "#d8b365")
         .text("Homens");
 
     grafico.append("text")
-        .attr("transform", "translate(" + (larguraVis-100) + "," + y(totalciclistas["21:00"].mulheres) + ")")
+        .attr("transform", "translate(" + (larguraVis-100) + "," + (20) + ")")
         .attr("dy", ".35em")
         .attr("text-anchor", "start")
         .style("fill", "#5ab4ac")
