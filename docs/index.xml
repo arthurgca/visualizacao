@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</managingEditor>
     <webMaster>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</webMaster>
-    <lastBuildDate>Sat, 09 Dec 2017 17:47:11 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 22 Dec 2017 14:32:22 -0300</lastBuildDate>
     
 	<atom:link href="https://arthurgca.github.io/visualizacao/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Quarto Post</title>
+      <link>https://arthurgca.github.io/visualizacao/post/quarto-post/</link>
+      <pubDate>Fri, 22 Dec 2017 14:32:22 -0300</pubDate>
+      <author>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</author>
+      <guid>https://arthurgca.github.io/visualizacao/post/quarto-post/</guid>
+      <description>div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }   Os locais de coleta e os seus meios de transportes mais usados.     function desenhaGrafico3(dados) { var alturaSVG = 400, larguraSVG = 1200; var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</description>
+    </item>
     
     <item>
       <title>Um dia ao redor do açude velho</title>
