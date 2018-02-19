@@ -7,18 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</managingEditor>
     <webMaster>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</webMaster>
-    <lastBuildDate>Fri, 22 Dec 2017 14:32:22 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 19 Feb 2018 15:28:12 -0300</lastBuildDate>
     
 	<atom:link href="https://arthurgca.github.io/visualizacao/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Laboratório 5 - Interação</title>
-      <link>https://arthurgca.github.io/visualizacao/post/quarto-post/</link>
-      <pubDate>Fri, 22 Dec 2017 14:32:22 -0300</pubDate>
+      <title>Quinto Post</title>
+      <link>https://arthurgca.github.io/visualizacao/post/quinto-post/</link>
+      <pubDate>Mon, 19 Feb 2018 15:28:12 -0300</pubDate>
       <author>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</author>
-      <guid>https://arthurgca.github.io/visualizacao/post/quarto-post/</guid>
-      <description>div.tooltip { position: absolute; text-align: center; width: 100px; height: 28px; padding: 2px; font: 12px sans-serif; background: white; border: 0px; border-radius: 8px; pointer-events: none; }   Os locais de coleta e os seus meios de transportes mais usados. Com filtragem por horários Passe o mouse em cima do círculo para ver a quantidade de ciclistas por sexo naquele horário Tudo Noite (acima de 16:00) Dia (entre 12:00 e 16:00) Manhã (abaixo de 12:00)      var parseTime = d3.</description>
+      <guid>https://arthurgca.github.io/visualizacao/post/quinto-post/</guid>
+      <description>O que podemos perceber relacionando os dois gráficos é que nas áreas com mais indigenas não existe uma coleta de lixo     var svg = d3.select(&#34;#svg1&#34;), width = +svg.attr(&#34;width&#34;), height = +svg.attr(&#34;height&#34;); var x = d3.scaleLinear() .domain([0,100]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain([0, 5, 10, 25,50, 100, 200]) .range(d3.schemeOrRd[8]); var g = svg.append(&#34;g&#34;) .attr(&#34;class&#34;, &#34;key&#34;) .attr(&#34;transform&#34;, &#34;translate(0,40)&#34;); g.selectAll(&#34;rect&#34;) .data(color.range().map(function(d) { d = color.invertExtent(d); if (d[0] == null) d[0] = x.</description>
     </item>
     
     <item>
