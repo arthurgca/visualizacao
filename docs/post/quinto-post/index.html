@@ -8,9 +8,9 @@
   <title>Quinto Post</title>
   <meta property="og:title" content="Quinto Post" />
   <meta name="twitter:title" content="Quinto Post" />
-  <meta name="description" content="O que podemos perceber relacionando os dois gráficos é que nas áreas com mais indigenas não existe uma coleta de lixo     var svg = d3.select(&#34;#svg1&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var x = d3.scaleLinear() .domain([0,100]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain([0, 5, 10, 25,50, 100, 200]) .range(d3.schemeOrRd[8]); var g = svg.append(&#34;g&#34;) .attr(&#34;class&#34;, &#34;key&#34;) .attr(&#34;transform&#34;, &#34;translate(0,40)&#34;); g.selectAll(&#34;rect&#34;) .data(color.range().map(function(d) { d = color.invertExtent(d); if (d[0] == null) d[0] = x.">
-  <meta property="og:description" content="O que podemos perceber relacionando os dois gráficos é que nas áreas com mais indigenas não existe uma coleta de lixo     var svg = d3.select(&#34;#svg1&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var x = d3.scaleLinear() .domain([0,100]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain([0, 5, 10, 25,50, 100, 200]) .range(d3.schemeOrRd[8]); var g = svg.append(&#34;g&#34;) .attr(&#34;class&#34;, &#34;key&#34;) .attr(&#34;transform&#34;, &#34;translate(0,40)&#34;); g.selectAll(&#34;rect&#34;) .data(color.range().map(function(d) { d = color.invertExtent(d); if (d[0] == null) d[0] = x.">
-  <meta name="twitter:description" content="O que podemos perceber relacionando os dois gráficos é que nas áreas com mais indigenas não existe uma coleta de lixo     var svg = d3.select(&#34;#svg1&#34;), width = &#43;svg.attr(&#34;width&#34;), height = …">
+  <meta name="description" content="O que podemos perceber relacionando os dois gráficos é que nas áreas com mais indigenas não existe uma coleta de lixo e no geral a coleta de lixo em maiores porcentagens se concentra nas grandes cidades.     var svg = d3.select(&#34;#svg1&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var x = d3.scaleLinear() .domain([0,100]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain([0, 5, 10, 25,50, 100, 200]) .">
+  <meta property="og:description" content="O que podemos perceber relacionando os dois gráficos é que nas áreas com mais indigenas não existe uma coleta de lixo e no geral a coleta de lixo em maiores porcentagens se concentra nas grandes cidades.     var svg = d3.select(&#34;#svg1&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var x = d3.scaleLinear() .domain([0,100]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain([0, 5, 10, 25,50, 100, 200]) .">
+  <meta name="twitter:description" content="O que podemos perceber relacionando os dois gráficos é que nas áreas com mais indigenas não existe uma coleta de lixo e no geral a coleta de lixo em maiores porcentagens se concentra nas grandes …">
   <meta name="author" content="Arthur Gurjão"/>
   <link href='https://arthurgca.github.io/visualizacao/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://arthurgca.github.io/visualizacao/img/avatar-icon.png" />
@@ -172,12 +172,13 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p><img src="../pb-indi.svg" width="960" height="auto">
-<svg id="svg1" width="400" height="300"></svg></p>
+<svg id="svg1" width="400" height="100"></svg></p>
 
 <p><img src="../pb-coleta.svg" width="960" height="auto">
-<svg id="svg2" width="400" height="300"></svg></p>
+<svg id="svg2" width="400" height="100"></svg></p>
 
-<h2> O que podemos perceber relacionando os dois gráficos é que nas áreas com mais indigenas não existe uma coleta de lixo</h2>
+<h3> O que podemos perceber relacionando os dois gráficos é que nas áreas com mais indigenas não existe uma coleta de lixo e no geral a coleta de lixo em maiores porcentagens se concentra
+nas grandes cidades.</h3>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>

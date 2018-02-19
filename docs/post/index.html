@@ -162,7 +162,7 @@
               </p>
               <div class="post-entry">
                 
-                  O que podemos perceber relacionando os dois gráficos é que nas áreas com mais indigenas não existe uma coleta de lixo     var svg = d3.select("#svg1"), width = +svg.attr("width"), height = +svg.attr("height"); var x = d3.scaleLinear() .domain([0,100]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain([0, 5, 10, 25,50, 100, 200]) .range(d3.schemeOrRd[8]); var g = svg.append("g") .attr("class", "key") .attr("transform", "translate(0,40)"); g.selectAll("rect") .data(color.range().map(function(d) { d = color.invertExtent(d); if (d[0] == null) d[0] = x.
+                  O que podemos perceber relacionando os dois gráficos é que nas áreas com mais indigenas não existe uma coleta de lixo e no geral a coleta de lixo em maiores porcentagens se concentra nas grandes cidades.     var svg = d3.select("#svg1"), width = +svg.attr("width"), height = +svg.attr("height"); var x = d3.scaleLinear() .domain([0,100]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain([0, 5, 10, 25,50, 100, 200]) .
                   <a href="https://arthurgca.github.io/visualizacao/post/quinto-post/" class="post-read-more">[Read More]</a>
                 
               </div>
