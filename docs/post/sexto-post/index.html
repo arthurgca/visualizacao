@@ -5,33 +5,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Lab 1 - Parte 3</title>
-  <meta property="og:title" content="Lab 1 - Parte 3" />
-  <meta name="twitter:title" content="Lab 1 - Parte 3" />
-  <meta name="description" content="Caminho do volume morto  
-Quais os meses em que o açude mais sangrou  
-Comparando os anos com piores médias de volume percentual O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis. 
-Média de volume percentual por estação Comparando as médias dos meses por estação  Verão Outono Inverno Primavera 
-     const spec = &#34;">
-  <meta property="og:description" content="Caminho do volume morto  
-Quais os meses em que o açude mais sangrou  
-Comparando os anos com piores médias de volume percentual O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis. 
-Média de volume percentual por estação Comparando as médias dos meses por estação  Verão Outono Inverno Primavera 
-     const spec = &#34;">
-  <meta name="twitter:description" content="Caminho do volume morto  
-Quais os meses em que o açude mais sangrou  
-Comparando os anos com piores médias de volume percentual O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No …">
+  <title>Lab 3 - Parte 3 - Tutorial Mapa Interativo</title>
+  <meta property="og:title" content="Lab 3 - Parte 3 - Tutorial Mapa Interativo" />
+  <meta name="twitter:title" content="Lab 3 - Parte 3 - Tutorial Mapa Interativo" />
+  <meta name="description" content=".cidades { fill: none; stroke: #fff; stroke-linejoin: round; }
+path:hover, path.highlighted { fill: tomato; }
+div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: black; font-family:&ldquo;avenir next&rdquo;, Arial, sans-serif; padding: 4px 8px; display: none; }
+
+
+     var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var path = d3.geoPath(); // a escala de cores var color = d3.scaleThreshold() .domain(d3.range(0, 81, 20)) .">
+  <meta property="og:description" content=".cidades { fill: none; stroke: #fff; stroke-linejoin: round; }
+path:hover, path.highlighted { fill: tomato; }
+div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: black; font-family:&ldquo;avenir next&rdquo;, Arial, sans-serif; padding: 4px 8px; display: none; }
+
+
+     var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var path = d3.geoPath(); // a escala de cores var color = d3.scaleThreshold() .domain(d3.range(0, 81, 20)) .">
+  <meta name="twitter:description" content=".cidades { fill: none; stroke: #fff; stroke-linejoin: round; }
+path:hover, path.highlighted { fill: tomato; }
+div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: …">
   <meta name="author" content="Arthur Gurjão"/>
   <link href='https://arthurgca.github.io/visualizacao/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://arthurgca.github.io/visualizacao/img/avatar-icon.png" />
   <meta name="twitter:image" content="https://arthurgca.github.io/visualizacao/img/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://arthurgca.github.io/visualizacao/post/primeiro-post/" />
+  <meta property="og:url" content="https://arthurgca.github.io/visualizacao/post/sexto-post/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Visualização da Informação - 2017.2" />
 
   <meta name="generator" content="Hugo 0.30.2" />
-  <link rel="canonical" href="https://arthurgca.github.io/visualizacao/post/primeiro-post/" />
+  <link rel="canonical" href="https://arthurgca.github.io/visualizacao/post/sexto-post/" />
   <link rel="alternate" href="" type="application/rss+xml" title="Visualização da Informação - 2017.2">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -158,11 +160,11 @@ Comparando os anos com piores médias de volume percentual O ano com menor médi
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>Lab 1 - Parte 3</h1>
+              <h1>Lab 3 - Parte 3 - Tutorial Mapa Interativo</h1>
                 
                 
                   <span class="post-meta">
-  Posted on November 13, 2017
+  Posted on February 21, 2018
   
 </span>
 
@@ -181,41 +183,115 @@ Comparando os anos com piores médias de volume percentual O ano com menor médi
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p><h2> Caminho do volume morto </h2>
-<div id="vis" width=300></div></p>
+        <p><meta charset="utf-8">
+<style></p>
 
-<p><h2>Quais os meses em que o açude mais sangrou </h2>
-<div id="vis2" width=300></div></p>
+<p>.cidades {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}</p>
 
-<p><h2>Comparando os anos com piores médias de volume percentual</h2>
-<h5>O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis.</h5>
-<div id="vis3" width=300></div></p>
+<p>path:hover, path.highlighted {
+  fill: tomato;
+}</p>
 
-<p><h2>Média de volume percentual por estação</h2>
-<h5>Comparando as médias dos meses por estação</h5>
-<ul>
-    <li><font color="red">Verão</font></li>
-    <li><font color="goldenrod">Outono</font></li>
-    <li><font color="blue">Inverno</font></li>
-    <li><font color="green">Primavera</font></li>
-</ul></p>
+<p>div.tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-family:&ldquo;avenir next&rdquo;, Arial, sans-serif;
+  padding: 4px 8px;
+  display: none;
+}</p>
 
-<div id="vis4" width=300></div>
+<p></style></p>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
+<p><svg width="1000" height="600"></svg></p>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="../sexto_post_files/legenda-d3-cor.js"></script>
 <script>
-    const spec = "../volumemorto.json";
-    const spec2 = "../sangrou.json";
-    const spec3 = "../anosseca.json";
-    const spec4 = "../estacoes.json";
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+
+var path = d3.geoPath();
+
+// a escala de cores
+var color = d3.scaleThreshold()
+      .domain(d3.range(0, 81, 20))
+      .range(d3.schemeRdYlGn[5]);
+
+// função aux definida em legenda-d3-cor.js
+desenhaLegenda(0, 81, color, "Crescimento entre 2011 e 2013 (pp*)")
+
+d3.queue()
+    .defer(d3.json, "../sexto_post_files/geo4-municipios-e-aprendizado-simplificado.json")
+    .await(ready);
+
+function ready(error, dados) {
+  if (error) throw error;
+
+  var cidades = dados.features;
+
+  svg.append("g")
+      .attr("class", "cidades")
+    .selectAll("path")
+    .data(cidades)
+    .enter()
+    .append("path")
+      .attr("fill", d => {valor = d.properties["Crescimento entre 2011 e 2013 (pp*)"]; return valor === "NA" ? '#e0e0eb' : color(valor)})
+      .attr("d", path)
+      .on("mouseover",showTooltip)
+      .on("mousemove",moveTooltip)
+      .on("mouseout",hideTooltip)
+}
+
+// ZOOM
+
+//create zoom handler
+var zoom_handler = d3.zoom()
+    .on("zoom", zoom_actions);
+
+//specify what to do when zoom event listener is triggered
+function zoom_actions(){
+ d3.selectAll("path").attr("transform", d3.event.transform);
+}
+
+//add zoom behaviour to the svg element
+//same as svg.call(zoom_handler);
+zoom_handler(svg);
 
 
-    vegaEmbed('#vis', spec).catch(console.warn);
-    vegaEmbed('#vis2', spec2).catch(console.warn);
-    vegaEmbed('#vis3', spec3).catch(console.warn);
-    vegaEmbed('#vis4', spec4).catch(console.warn);
+// TOOLTIP
+
+//Create a tooltip, hidden at the start
+var tooltip = d3.select("body").append("div").attr("class","tooltip");
+//Position of the tooltip relative to the cursor
+var tooltipOffset = {x: 5, y: -25};
+
+function showTooltip(d) {
+  moveTooltip();
+
+  tooltip.style("display","block")
+      .text(d.properties.Cidade + ": " + d.properties["Crescimento entre 2011 e 2013 (pp*)"] + "%");
+}
+
+//Move the tooltip to track the mouse
+function moveTooltip() {
+  tooltip.style("top",(d3.event.pageY+tooltipOffset.y)+"px")
+      .style("left",(d3.event.pageX+tooltipOffset.x)+"px");
+}
+
+//Create a tooltip, hidden at the start
+function hideTooltip() {
+  tooltip.style("display","none");
+}
 
 </script>
 
@@ -224,13 +300,9 @@ Comparando os anos com piores médias de volume percentual O ano com menor médi
       <ul class="pager blog-pager">
         
           <li class="previous">
-            <a href="https://arthurgca.github.io/visualizacao/post/sexto_post_files/3-mapa-interativo-1/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+            <a href="https://arthurgca.github.io/visualizacao/post/quinto-post/" data-toggle="tooltip" data-placement="top" title="Quinto Post">&larr; Previous Post</a>
           </li>
         
-        
-          <li class="next">
-            <a href="https://arthurgca.github.io/visualizacao/post/segundo-post/" data-toggle="tooltip" data-placement="top" title="Lab 2 - Parte 1">Next Post &rarr;</a>
-          </li>
         
       </ul>
 
