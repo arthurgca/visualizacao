@@ -12,6 +12,10 @@ date: 2018-02-21T11:16:34-03:00
   stroke-linejoin: round;
 }
 
+h3 {
+  font-family:"avenir next", Arial, sans-serif;
+}
+
 path:hover, path.highlighted {
   fill: tomato;
 }
@@ -30,10 +34,14 @@ div.tooltip {
 
 <svg width="1000" height="600"></svg>
 
+<h3>- Podemos perceber melhor os altos e baixos usando uma escala divergente nas cores </h3>
+<h3>- Com a ferramenta de zoom podemos perceber melhor os municípios pequenos, ainda mais com a tooltip.</h3>
+<h3>- Na região do sertão parece ter havido uma melhora na maioria dos municípios, em contraste com o litoral onde os números se manteram ou diminuiram em geral.</h3>
+<h3>- Não consegui perceber um padrão em relação aos municípios que tiveram grande diminuição, estão presentes em todo o estado </h3>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/topojson.v2.min.js"></script>
-<script src="../sexto_post_files/legenda-d3-cor.js"></script>
+<script src="legenda-d3-cor.js"></script>
 <script>
 
 var svg = d3.select("svg"),
@@ -44,14 +52,14 @@ var path = d3.geoPath();
 
 // a escala de cores
 var color = d3.scaleThreshold()
-      .domain(d3.range(0, 81, 20))
-      .range(d3.schemeRdYlGn[5]);
+      .domain(d3.range(-28, 53, 15))
+      .range(d3.schemeRdYlGn[6]);
 
 // função aux definida em legenda-d3-cor.js
-desenhaLegenda(0, 81, color, "Crescimento entre 2011 e 2013 (pp*)")
+desenhaLegenda(0, 100, color, "Crescimento entre 2011 e 2013 (pp*)")
 
 d3.queue()
-    .defer(d3.json, "../sexto_post_files/geo4-municipios-e-aprendizado-simplificado.json")
+    .defer(d3.json, "geo4-municipios-e-aprendizado-simplificado.json")
     .await(ready);
 
 function ready(error, dados) {

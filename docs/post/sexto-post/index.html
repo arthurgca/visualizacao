@@ -9,20 +9,23 @@
   <meta property="og:title" content="Lab 3 - Parte 3 - Tutorial Mapa Interativo" />
   <meta name="twitter:title" content="Lab 3 - Parte 3 - Tutorial Mapa Interativo" />
   <meta name="description" content=".cidades { fill: none; stroke: #fff; stroke-linejoin: round; }
+h3 { font-family:&ldquo;avenir next&rdquo;, Arial, sans-serif; }
 path:hover, path.highlighted { fill: tomato; }
 div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: black; font-family:&ldquo;avenir next&rdquo;, Arial, sans-serif; padding: 4px 8px; display: none; }
 
 
-     var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var path = d3.geoPath(); // a escala de cores var color = d3.scaleThreshold() .domain(d3.range(0, 81, 20)) .">
+- Podemos perceber melhor os altos e baixos usando uma escala divergente nas cores  - Com a ferramenta de zoom podemos perceber melhor os municípios pequenos, ainda mais com a tooltip.">
   <meta property="og:description" content=".cidades { fill: none; stroke: #fff; stroke-linejoin: round; }
+h3 { font-family:&ldquo;avenir next&rdquo;, Arial, sans-serif; }
 path:hover, path.highlighted { fill: tomato; }
 div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: black; font-family:&ldquo;avenir next&rdquo;, Arial, sans-serif; padding: 4px 8px; display: none; }
 
 
-     var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var path = d3.geoPath(); // a escala de cores var color = d3.scaleThreshold() .domain(d3.range(0, 81, 20)) .">
+- Podemos perceber melhor os altos e baixos usando uma escala divergente nas cores  - Com a ferramenta de zoom podemos perceber melhor os municípios pequenos, ainda mais com a tooltip.">
   <meta name="twitter:description" content=".cidades { fill: none; stroke: #fff; stroke-linejoin: round; }
+h3 { font-family:&ldquo;avenir next&rdquo;, Arial, sans-serif; }
 path:hover, path.highlighted { fill: tomato; }
-div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: …">
+div.tooltip { position: …">
   <meta name="author" content="Arthur Gurjão"/>
   <link href='https://arthurgca.github.io/visualizacao/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://arthurgca.github.io/visualizacao/img/avatar-icon.png" />
@@ -192,6 +195,10 @@ div.tooltip { position: absolute; background-color: white; border: 1px solid bla
   stroke-linejoin: round;
 }</p>
 
+<p>h3 {
+  font-family:&ldquo;avenir next&rdquo;, Arial, sans-serif;
+}</p>
+
 <p>path:hover, path.highlighted {
   fill: tomato;
 }</p>
@@ -210,90 +217,93 @@ div.tooltip { position: absolute; background-color: white; border: 1px solid bla
 
 <p><svg width="1000" height="600"></svg></p>
 
+<p><h3>- Podemos perceber melhor os altos e baixos usando uma escala divergente nas cores </h3>
+<h3>- Com a ferramenta de zoom podemos perceber melhor os municípios pequenos, ainda mais com a tooltip.</h3>
+<h3>- Na região do sertão parece ter havido uma melhora na maioria dos municípios, em contraste com o litoral onde os números se manteram ou diminuiram em geral.</h3>
+<h3>- Não consegui perceber um padrão em relação aos municípios que tiveram grande diminuição, estão presentes em todo o estado </h3>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/topojson.v2.min.js"></script>
-<script src="../sexto_post_files/legenda-d3-cor.js"></script>
-<script>
+<script src="legenda-d3-cor.js"></script>
+<script></p>
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+<p>var svg = d3.select(&ldquo;svg&rdquo;),
+    width = +svg.attr(&ldquo;width&rdquo;),
+    height = +svg.attr(&ldquo;height&rdquo;);</p>
 
-var path = d3.geoPath();
+<p>var path = d3.geoPath();</p>
 
-// a escala de cores
+<p>// a escala de cores
 var color = d3.scaleThreshold()
-      .domain(d3.range(0, 81, 20))
-      .range(d3.schemeRdYlGn[5]);
+      .domain(d3.range(-28, 53, 15))
+      .range(d3.schemeRdYlGn[6]);</p>
 
-// função aux definida em legenda-d3-cor.js
-desenhaLegenda(0, 81, color, "Crescimento entre 2011 e 2013 (pp*)")
+<p>// função aux definida em legenda-d3-cor.js
+desenhaLegenda(0, 100, color, &ldquo;Crescimento entre 2011 e 2013 (pp*)&ldquo;)</p>
 
-d3.queue()
-    .defer(d3.json, "../sexto_post_files/geo4-municipios-e-aprendizado-simplificado.json")
-    .await(ready);
+<p>d3.queue()
+    .defer(d3.json, &ldquo;geo4-municipios-e-aprendizado-simplificado.json&rdquo;)
+    .await(ready);</p>
 
-function ready(error, dados) {
-  if (error) throw error;
+<p>function ready(error, dados) {
+  if (error) throw error;</p>
 
-  var cidades = dados.features;
+<p>var cidades = dados.features;</p>
 
-  svg.append("g")
-      .attr("class", "cidades")
-    .selectAll("path")
+<p>svg.append(&ldquo;g&rdquo;)
+      .attr(&ldquo;class&rdquo;, &ldquo;cidades&rdquo;)
+    .selectAll(&ldquo;path&rdquo;)
     .data(cidades)
     .enter()
-    .append("path")
-      .attr("fill", d => {valor = d.properties["Crescimento entre 2011 e 2013 (pp*)"]; return valor === "NA" ? '#e0e0eb' : color(valor)})
-      .attr("d", path)
-      .on("mouseover",showTooltip)
-      .on("mousemove",moveTooltip)
-      .on("mouseout",hideTooltip)
-}
+    .append(&ldquo;path&rdquo;)
+      .attr(&ldquo;fill&rdquo;, d =&gt; {valor = d.properties[&ldquo;Crescimento entre 2011 e 2013 (pp*)&ldquo;]; return valor === &ldquo;NA&rdquo; ? &lsquo;#e0e0eb&rsquo; : color(valor)})
+      .attr(&ldquo;d&rdquo;, path)
+      .on(&ldquo;mouseover&rdquo;,showTooltip)
+      .on(&ldquo;mousemove&rdquo;,moveTooltip)
+      .on(&ldquo;mouseout&rdquo;,hideTooltip)
+}</p>
 
-// ZOOM
+<p>// ZOOM</p>
 
-//create zoom handler
+<p>//create zoom handler
 var zoom_handler = d3.zoom()
-    .on("zoom", zoom_actions);
+    .on(&ldquo;zoom&rdquo;, zoom_actions);</p>
 
-//specify what to do when zoom event listener is triggered
+<p>//specify what to do when zoom event listener is triggered
 function zoom_actions(){
- d3.selectAll("path").attr("transform", d3.event.transform);
-}
+ d3.selectAll(&ldquo;path&rdquo;).attr(&ldquo;transform&rdquo;, d3.event.transform);
+}</p>
 
-//add zoom behaviour to the svg element
+<p>//add zoom behaviour to the svg element
 //same as svg.call(zoom_handler);
-zoom_handler(svg);
+zoom_handler(svg);</p>
 
+<p>// TOOLTIP</p>
 
-// TOOLTIP
-
-//Create a tooltip, hidden at the start
-var tooltip = d3.select("body").append("div").attr("class","tooltip");
+<p>//Create a tooltip, hidden at the start
+var tooltip = d3.select(&ldquo;body&rdquo;).append(&ldquo;div&rdquo;).attr(&ldquo;class&rdquo;,&ldquo;tooltip&rdquo;);
 //Position of the tooltip relative to the cursor
-var tooltipOffset = {x: 5, y: -25};
+var tooltipOffset = {x: 5, y: -25};</p>
 
-function showTooltip(d) {
-  moveTooltip();
+<p>function showTooltip(d) {
+  moveTooltip();</p>
 
-  tooltip.style("display","block")
-      .text(d.properties.Cidade + ": " + d.properties["Crescimento entre 2011 e 2013 (pp*)"] + "%");
-}
+<p>tooltip.style(&ldquo;display&rdquo;,&ldquo;block&rdquo;)
+      .text(d.properties.Cidade + &ldquo;: &ldquo; + d.properties[&ldquo;Crescimento entre 2011 e 2013 (pp*)&ldquo;] + &ldquo;%&rdquo;);
+}</p>
 
-//Move the tooltip to track the mouse
+<p>//Move the tooltip to track the mouse
 function moveTooltip() {
-  tooltip.style("top",(d3.event.pageY+tooltipOffset.y)+"px")
-      .style("left",(d3.event.pageX+tooltipOffset.x)+"px");
-}
+  tooltip.style(&ldquo;top&rdquo;,(d3.event.pageY+tooltipOffset.y)+&ldquo;px&rdquo;)
+      .style(&ldquo;left&rdquo;,(d3.event.pageX+tooltipOffset.x)+&ldquo;px&rdquo;);
+}</p>
 
-//Create a tooltip, hidden at the start
+<p>//Create a tooltip, hidden at the start
 function hideTooltip() {
-  tooltip.style("display","none");
-}
+  tooltip.style(&ldquo;display&rdquo;,&ldquo;none&rdquo;);
+}</p>
 
-</script>
+<p></script></p>
 
       </article>
 
