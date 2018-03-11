@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</managingEditor>
     <webMaster>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</webMaster>
-    <lastBuildDate>Wed, 21 Feb 2018 17:24:05 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 10 Mar 2018 21:06:34 -0300</lastBuildDate>
     
 	<atom:link href="https://arthurgca.github.io/visualizacao/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Oitavo Post</title>
+      <link>https://arthurgca.github.io/visualizacao/post/oitavo-post/</link>
+      <pubDate>Sat, 10 Mar 2018 21:06:34 -0300</pubDate>
+      <author>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</author>
+      <guid>https://arthurgca.github.io/visualizacao/post/oitavo-post/</guid>
+      <description>.node { fill: #ccc; stroke: #fff; stroke-width: 2px; } .link { stroke: #999; stroke-opacity: 0.3; }  
+  Grafos sobre Trevor   O que é? Para esse exemplo, usamos dados de quais artistas são semelhantes a quais da API do Spotify. A partir de um artista inicial, usamos um programa que pega artistas semelhantes a ele, e semelhantes a estes, até atingir um limite.
+Topologia da rede Os nós se agrupam com base no estilo de cada artista.</description>
+    </item>
     
     <item>
       <title>Lab 3 - Seu mapa</title>
@@ -74,6 +85,15 @@ Quais os meses em que o açude mais sangrou
 Comparando os anos com piores médias de volume percentual O ano com menor média foi 2017, em seguida 2016 e logo depois 1999. No gráfico estamos comparando os valores máximos mensáis. 
 Média de volume percentual por estação Comparando as médias dos meses por estação  Verão Outono Inverno Primavera 
      const spec = &#34;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://arthurgca.github.io/visualizacao/post/networks3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</author>
+      <guid>https://arthurgca.github.io/visualizacao/post/networks3/</guid>
+      <description>D3  .node { fill: #ccc; stroke: #fff; stroke-width: 2px; } .link { stroke: #999; stroke-opacity: 0.3; }    Force layout    1 2 3 4   A preferida do Brasil   O que Para esse exemplo, usamos dados de quais artistas são semelhantes a quais da API do Spotify. A partir de um artista inicial, usamos um programa que pega artistas semelhantes a ele, e semelhantes a estes, até atingir um limite.</description>
     </item>
     
   </channel>
