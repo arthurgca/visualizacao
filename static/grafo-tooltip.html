@@ -1,7 +1,3 @@
----
-title: "Oitavo Post"
-date: 2018-03-10T21:06:34-03:00
----
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
 <style>
@@ -15,6 +11,15 @@ date: 2018-03-10T21:06:34-03:00
         stroke-opacity: 0.3;
     }
 
+    div.tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-family:"avenir next", Arial, sans-serif;
+  padding: 4px 8px;
+  display: none;
+}
   </style>
 
 <body>
@@ -48,14 +53,16 @@ date: 2018-03-10T21:06:34-03:00
 
   var simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(function(d) { return d.id; }))
-      .force("charge", d3.forceManyBody().strength(-5))
+      .force("charge", d3.forceManyBody().strength(-6))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
-  d3.json("../trevor.json", function(error, graph) {
+  d3.json("trevor.json", function(error, graph) {
     if (error) throw error;
 
     const size_threshold = 5;
     filter_out = graph.nodes.filter(x => x.size < size_threshold);
+
+
 
     for (var index in filter_out) {
       graph.edges = graph.edges.filter(x => x.source != filter_out[index].id);
@@ -84,15 +91,15 @@ date: 2018-03-10T21:06:34-03:00
         .attr("r", function(d) { return d.size/6; })
         .attr("fill", function(d) { return color(d.size); })
         .attr("class", "node" )
+        .on("mouseover",showTooltip)
+      .on("mousemove",moveTooltip)
+      .on("mouseout",hideTooltip)
         .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
             .on("end", dragended));
 
     node._groups[0][0].setAttribute("fill", "#008000");
-
-    node.append("title")
-        .text(function(d) { return d.label; });
 
     simulation
         .nodes(graph.nodes)
@@ -130,4 +137,28 @@ date: 2018-03-10T21:06:34-03:00
     d.fx = null;
     d.fy = null;
   }
+
+// TOOLTIP
+
+//Create a tooltip, hidden at the start
+var tooltip = d3.select("body").append("div").attr("class","tooltip");
+//Position of the tooltip relative to the cursor
+var tooltipOffset = {x: 5, y: -25};
+
+function showTooltip(d) {
+  moveTooltip();
+  tooltip.style("display","block")
+      .text(d.label);
+}
+
+//Move the tooltip to track the mouse
+function moveTooltip() {
+  tooltip.style("top",(d3.event.pageY+tooltipOffset.y)+"px")
+      .style("left",(d3.event.pageX+tooltipOffset.x)+"px");
+}
+
+//Create a tooltip, hidden at the start
+function hideTooltip() {
+  tooltip.style("display","none");
+}
 </script>

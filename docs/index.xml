@@ -18,9 +18,8 @@
       <pubDate>Sat, 10 Mar 2018 21:06:34 -0300</pubDate>
       <author>arthur.azevedo@ccc.ufcg.edu.br (Arthur Gurjão)</author>
       <guid>https://arthurgca.github.io/visualizacao/post/oitavo-post/</guid>
-      <description>.node { fill: #ccc; stroke: #fff; stroke-width: 2px; } .link { stroke: #999; stroke-opacity: 0.3; }  
-  Grafos sobre Trevor   O que é? Para esse exemplo, usamos dados de quais artistas são semelhantes a quais da API do Spotify. A partir de um artista inicial, usamos um programa que pega artistas semelhantes a ele, e semelhantes a estes, até atingir um limite.
-Topologia da rede Os nós se agrupam com base no estilo de cada artista.</description>
+      <description>.node { stroke: #FFF; stroke-width: 1px; } .link { stroke: #000; stroke-opacity: 0.3; }  
+  Trevor Something - Popularidade e similaridades       var width = 1000, height = 1000; var svg = d3.select(&#34;#chart&#34;) .append(&#34;svg&#34;) .attr(&#39;version&#39;, &#39;1.1&#39;) .attr(&#39;viewBox&#39;, &#39;0 0 &#39;+width+&#39; &#39;+height) .attr(&#39;width&#39;, &#39;100%&#39;); var simulation = d3.forceSimulation() .force(&#34;link&#34;, d3.forceLink().id(function(d) { return d.id; })) .force(&#34;charge&#34;, d3.forceManyBody().strength(-5)) .force(&#34;center&#34;, d3.forceCenter(width / 2, height / 2)); d3.</description>
     </item>
     
     <item>
